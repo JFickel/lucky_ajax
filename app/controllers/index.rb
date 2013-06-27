@@ -9,7 +9,9 @@ post '/rolls' do
   # See: roll_if_value_is_nil method in the Roll model.
   value = params[:value] ? params[:value].to_i : nil
 
+
   @roll = value ? Roll.create({ value: value }) : Roll.create
 
-  erb :index  # HINT: what does this do? what should we do instead?
+  # erb :index  # HINT: what does this do? what should we do instead?
+  erb :_die, layout: false
 end
